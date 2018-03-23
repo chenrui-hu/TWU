@@ -1,5 +1,6 @@
 package Assignment_2;
 
+import java.lang.reflect.Array;
 import java.util.Scanner;
 
 
@@ -46,17 +47,21 @@ public class DiamondExercises{
             }
             for (int k = 0; k < (i+1)*2-1; k++){
                 System.out.print("*");
+
             }
             System.out.println();
         }
+
+        System.out.println(name);
 
         for (int i = 0; i < size; i++){
             for (int j = 0; j < i; j++){
                 System.out.print(" ");
             }
-            for (int k = i; k < 2*size-i-1; k++){
+            for (int k = i; k < 2*size-i-2; k++){
                 System.out.print("*");
             }
+            System.out.print("*");
             System.out.println();
         }
     }
@@ -67,13 +72,14 @@ public class DiamondExercises{
         System.out.println("Please Enter the height of the triangle:");
         int height = sc.nextInt();
         isoscelesTriangle(height);
-        System.out.println("Please Enter the height of the Diamond:");
+
+        System.out.println("Please Enter the height of the isoscelesTriangle:");
         int d_height = sc.nextInt();
         diamond(d_height);
-        System.out.println("Please Enter the height of the Diamond:");
-        int dn_height = sc.nextInt();
-        System.out.println("Please Enter the name in the Diamond:");
-        String d_name = sc.nextLine();
-        diamondWName(dn_height, d_name);
+
+        System.out.println("Please Enter the height and name of the Diamond, separate with /:");
+        String line = "10/amanda";
+        String[] input = line.split("/");
+        diamondWName(Integer.parseInt(input[0]), input[1]);
     }
 }
