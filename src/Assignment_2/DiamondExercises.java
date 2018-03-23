@@ -78,8 +78,9 @@ public class DiamondExercises{
         diamond(d_height);
 
         System.out.println("Please Enter the height and name of the Diamond, separate with /:");
-        String line = "10/amanda";
-        String[] input = line.split("/");
+        //String line = "10/amanda";
+        Scanner next = new Scanner(System.in);
+        String[] input = next.nextLine().split("/");
         diamondWName(Integer.parseInt(input[0]), input[1]);
     }
 }
